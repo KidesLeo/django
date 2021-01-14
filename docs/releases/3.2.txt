@@ -624,6 +624,14 @@ backends.
   <django.contrib.admin.AdminSite.final_catch_all_view>` to ``False``,
   disabling the catch-all view. See :ref:`whats-new-3.2` for more details.
 
+* Minified JavaScript files are no longer included with the admin. If you
+  require these files to be minified, consider using a third party app or
+  external build tool. The minified vendored JavaScript files packaged with the
+  admin (e.g. :ref:`jquery.min.js <contrib-admin-jquery>`) are still included.
+
+* :attr:`.ModelAdmin.prepopulated_fields` no longer strips English stop words,
+  such as ``'a'`` or ``'an'``.
+
 :mod:`django.contrib.gis`
 -------------------------
 
@@ -651,14 +659,6 @@ Miscellaneous
 
 * The undocumented ``SpatiaLiteOperations.proj4_version()`` method is renamed
   to ``proj_version()``.
-
-* Minified JavaScript files are no longer included with the admin. If you
-  require these files to be minified, consider using a third party app or
-  external build tool. The minified vendored JavaScript files packaged with the
-  admin (e.g. :ref:`jquery.min.js <contrib-admin-jquery>`) are still included.
-
-* :attr:`.ModelAdmin.prepopulated_fields` no longer strips English stop words,
-  such as ``'a'`` or ``'an'``.
 
 * :func:`~django.utils.text.slugify` now removes leading and trailing dashes
   and underscores.
